@@ -1,0 +1,79 @@
+footer {
+    width: 95%;
+    margin: 0 auto;
+    margin-top: 5%;
+    text-align: center;
+    background-color: #e3e7e9;
+
+    .box-footer {
+        padding-top: 10px;
+        .about__four{
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        h6 {
+            font-weight: bold;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+
+        .social {
+            img {
+                width: 26px;
+                margin-right: 5px;
+            }
+        }
+
+        .pay {
+            margin-top: 25px;
+        }
+    }
+    .inf {
+        margin-top: 2%;
+        text-align: center;
+        .inf__more{
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        .call_me{
+            width: 450px;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            a{
+                &:hover{
+                    border-bottom: 1px solid #000;
+                }
+            }
+        }
+        a {
+            color: #212529;
+            text-decoration: none;
+        }
+
+        border-bottom: 1px solid rgb(154, 160, 166);
+        padding-bottom: 2%;
+    }
+    .endf{
+        .line_one{
+            margin-bottom: 0;
+        }
+        div{
+            margin: 10px 0;
+        }
+    }
+}
+
+.clear {
+    clear: both;
+}
