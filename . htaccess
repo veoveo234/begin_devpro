@@ -1,0 +1,55 @@
+RewriteEngine On
+
+#trang chu
+
+RewriteRule ^trang-chu.html$ index.php
+RewriteRule ^index.html$ index.php
+#cart
+RewriteRule ^gio-hang.html$ index.php?controller=cart
+RewriteRule ^thanh-toan.html$ index.php?controller=cart&action=checkout
+
+RewriteRule ^lien-he.html$ index.php?controller=request
+
+#tai khoan
+RewriteRule ^dang-nhap.html$ index.php?controller=account&action=login
+RewriteRule ^dang-ki.html$ index.php?controller=account&action=register
+RewriteRule ^dang-ki-thanh-cong.html$ index.php?controller=account&action=completedRegister
+RewriteRule ^xac-nhan-email.html$ index.php?controller=account&action=checkRegisterPost
+RewriteRule ^dang-xuat.html$ index.php?controller=account&action=logout
+RewriteRule ^danh-sach-don-hang.html$ index.php?controller=account&action=orders
+RewriteRule ^danh-sach-don-hang/trang-([0-9]+).html$ index.php?controller=account&action=orders&page=$1
+
+#danh muc
+RewriteRule ^danh-muc/([0-9]+).html$ index.php?controller=products&action=ParentCategory&ParentCategory=$1
+RewriteRule ^danh-muc/([0-9]+)/([a-zA-Z0-9-]+).html$ index.php?controller=products&action=ParentCategory&ParentCategory=$1&ten=$2
+RewriteRule ^danh-muc-con/([0-9]+).html$ index.php?controller=products&action=category&id=$1
+RewriteRule ^danh-muc-con/([0-9]+)/([a-zA-Z0-9-]+).html$ index.php?controller=products&action=category&id=$1&ten=$2
+RewriteRule ^danh-muc-con/([0-9]+)/([a-zA-Z0-9-]+)/trang-([0-9]+).html$ index.php?controller=products&action=category&id=$1&ten=$2&p=$3
+
+#sap xep
+RewriteRule ^danh-muc-con/sap-xep/([0-9]+)/([a-zA-Z0-9-]+)/gia-giam-dan.html$ index.php?controller=products&action=category&id=$1&ten=$2&order=priceDesc
+RewriteRule ^danh-muc-con/sap-xep/([0-9]+)/([a-zA-Z0-9-]+)/gia-tang-dan.html$ index.php?controller=products&action=category&id=$1&ten=$2&order=priceAsc
+RewriteRule ^danh-muc-con/sap-xep/([0-9]+)/([a-zA-Z0-9-]+)/ten-z-a.html$ index.php?controller=products&action=category&id=$1&ten=$2&order=nameDesc
+RewriteRule ^danh-muc-con/sap-xep/([0-9]+)/([a-zA-Z0-9-]+)/ten-a-z.html$ index.php?controller=products&action=category&id=$1&ten=$2&order=nameAsc
+RewriteRule ^danh-muc-con/sap-xep/([0-9]+)/([a-zA-Z0-9-]+)/moi-nhat.html$ index.php?controller=products&action=category&id=$1&ten=$2&order=dateDesc
+RewriteRule ^danh-muc-con/sap-xep/([0-9]+)/([a-zA-Z0-9-]+)/([a-zA-Z0-9-]+).html$ index.php?controller=products&action=category&id=$1&ten=$2&order=$3
+
+
+#tim kiem
+RewriteRule ^tim-kiem/key-([a-zA-Z0-9-]+).html$ index.php?controller=search&action=searchNameProduct&like=$1
+RewriteRule ^tim-kiem/key-([a-zA-Z0-9-]+)/trang-([0-9]+).html$ index.php?controller=search&action=searchNameProduct&like=a&page=2
+RewriteRule ^tim-kiem/gia-([0-9]+)-den-([0-9]+).html$ index.php?controller=search&fromPrice=$1&toPrice=$2
+RewriteRule ^tim-kiem/gia-([0-9]+)-den-([0-9]+)/trang-([0-9]+).html$ index.php?controller=search&fromPrice=$1&toPrice=$2&page=$3
+RewriteRule ^tim-kiem/danh-muc-con/([0-9]+)/([a-zA-Z0-9-]+)/gia-([0-9]+)-den-([0-9]+).html$ index.php?controller=search&action=searchViaCategoryPrice&id=$1&ten=$2&fromPrice=$3&toPrice=$4
+RewriteRule ^tim-kiem/danh-muc-con/([0-9]+)/([a-zA-Z0-9-]+)/gia-([0-9]+)-den-([0-9]+)/trang-([0-9]+).html$ index.php?controller=search&action=searchViaCategoryPrice&id=$1&fromPrice=$2&toPrice=$3&page=$4
+
+
+#tin tuc
+RewriteRule ^tin-tuc.html$ index.php?controller=news
+RewriteRule ^tin-tuc/trang-([0-9]+).html$ index.php?controller=news&action=index&page=$1
+RewriteRule ^tin-tuc/chi-tiet/([0-9]+).html$ index.php?controller=news&action=detail&id=$1
+RewriteRule ^tin-tuc/chi-tiet/([0-9]+)/([a-zA-Z0-9-]+).html$ index.php?controller=news&action=detail&id=$1&ten=$2
+
+#san pham
+RewriteRule ^san-pham/chi-tiet/([0-9]+).html$ index.php?controller=products&action=detail&id=$1
+RewriteRule ^san-pham/chi-tiet/([0-9]+)/([a-zA-Z0-9-]+).html$ index.php?controller=products&action=detail&id=$1&ten=$2
